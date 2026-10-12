@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "main.h"
 #include "user.h"
+#include "tim.h"
 
 void delay_us(uint16_t us){
     uint16_t start_cnt = __HAL_TIM_GET_COUNTER(&htim2);
