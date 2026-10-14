@@ -20,7 +20,7 @@
 #include "main.h"
 #include "tim.h"
 #include "gpio.h"
-
+#include "user.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -44,7 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-static uint8_t direction = 1;
+static int8_t direction = 1;
 
 /* USER CODE END PV */
 
@@ -102,7 +102,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    HAL_GPIO_WritePin(PUL_GPIO_Port, PUL_Pin, GPIO_PIN_SET);
+    delay_us(500);
+    HAL_GPIO_WritePin(PUL_GPIO_Port, PUL_Pin, GPIO_PIN_RESET);
+    delay_us(500);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
